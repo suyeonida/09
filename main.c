@@ -5,18 +5,17 @@
 #define SIZE 5   //매크로에서 더 자세하게 다룸..define아래에서부터는 size의 단어를 모두5로 지정.  
 int main(int argc, char *argv[]) {
 	
-	int i, average,sum, grade[SIZE];
+	int i, grade[SIZE], score[SIZE];
 	
-	sum=0;
 	for(i=0;i<SIZE;i++){
 		
-		printf("성적입력하시오:");
-		scanf("%d",&grade[i]);
-		sum+=grade[i];
+		grade[i]=rand()%100+1;
 	}
-	
-	average=sum/SIZE;
-	printf("성적평균:%d\n",average);
-	
+	//move to score
+	for(i=0;i<SIZE;i++)
+		score[i]=grade[i];
+	for(i=0;i<SIZE;i++)
+		printf("score[%d] %i (%i)\n",i,score[i],grade[i] );
+		
 	return 0;
 }
