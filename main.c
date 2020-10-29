@@ -2,19 +2,21 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+#define SIZE 5   //매크로에서 더 자세하게 다룸..define아래에서부터는 size의 단어를 모두5로 지정.  
 int main(int argc, char *argv[]) {
 	
-	int i;
-	int grade[5];
+	int i, average,sum, grade[SIZE];
 	
-	grade[0]=10;
-	grade[1]=20;
-	grade[2]=30;
-	grade[3]=40;
-	grade[4]=50;
-	for(i=0;i<5;i++)
-		printf("grade[%d]=%d\n",i, grade[i]);
+	sum=0;
+	for(i=0;i<SIZE;i++){
 		
+		printf("성적입력하시오:");
+		scanf("%d",&grade[i]);
+		sum+=grade[i];
+	}
+	
+	average=sum/SIZE;
+	printf("성적평균:%d\n",average);
+	
 	return 0;
 }
